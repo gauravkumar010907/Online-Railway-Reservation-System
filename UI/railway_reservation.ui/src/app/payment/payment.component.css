@@ -1,0 +1,145 @@
+.main{
+    width: 1000px;
+    margin-left: 39%;
+  }
+  .register{
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    width: 35%;
+    border-radius: 20px;
+    border:3px solid rgba(255, 255, 255, 0.591);
+    box-shadow: 4px 1px 15px rgba(14, 48, 238, 0.444);
+  }
+  .tf{
+    margin-left: 330px;    
+    background-color: rgba(0, 17, 77, 0.5);
+    border-radius: 25px;
+    border: 3px solid rgba(6, 246, 6, 0.427);
+    text-align: center;
+    width: 50%;
+  }
+ul button{
+    margin-left: 330px;
+    text-decoration: none;
+    color: #fdfdfd;
+    padding: 5px 20px;
+    transition: 0.8s ease;
+    border: 1px solid #fdfdfd;
+    background: transparent;
+}
+ul button:hover{
+    background-color: rgb(220, 250, 215);
+color: black;
+}
+ul{
+    margin-top: 0px;
+    float: left;
+    list-style-type:none;
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: #fdfdfd;
+    padding: 8px 20px;
+    transition: 0.8s ease;
+    border: 1px solid #fdfdfd;
+}
+ul li a:hover{
+background-color: rgb(220, 250, 215);
+color: black;
+}
+.error{
+    color: rgb(255, 0, 0);
+}
+
+marquee{
+    font-size:x-large;
+    color: rgb(255, 255, 255);
+    font-weight:bolder;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgba(67, 67, 127, 0.373);
+  }
+  header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(trainBook.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 130vh; 
+} 
+.payment{
+    margin-top: 80px;
+    text-align: center;
+    color:whitesmoke;
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+h2 .fa{
+    color: rgb(0, 255, 221);
+}
+.main .fa{
+    color: rgb(0, 255, 221);
+}
+.totalFare{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+color: #fdfdfd;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size:35px;
+}
+.cd{
+    text-align: center;
+    color: rgb(253, 255, 255);
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.id{
+    margin-top: 15px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.name{
+    color: rgb(255, 255, 255);
+}
+.cvv{
+    margin-left: 103px;
+    color: rgb(255, 255, 255);
+}
+    .cn{
+        margin-left: 40px;
+        color: rgb(255, 255, 255);
+    }
+.d{
+    margin-left: 4px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+.but1{
+    margin-top: 20px;
+    margin-left: 620px;
+    font-size: 16px;
+    border: 1px solid #fdfdfd;
+    border-radius: 30%;
+    font-weight: bolder;
+    color: rgb(10, 0, 0);
+    transition: 0.8s ease;
+
+}
+.but1:hover{
+    background-color: rgb(103, 255, 237);
+    color: black;
+    }
+/* body{
+    background-color: rgb(212, 255, 254);
+    background-size: 100% auto;
+    width: 100%;
+}
+body {
+    border: 5px solid rgb(5, 205, 52);
+} */

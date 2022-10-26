@@ -1,0 +1,59 @@
+<body>
+    <header>
+    <marquee scrollamount="15" bgcolor="Green" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Payment Page--- Enter the Card Details carefully--- Thankyou!!!</marquee>
+    <ul>
+        <!-- <li class="hp"><a href="http://localhost:4200/login"><i class="fa fa-home" aria-hidden="true"></i> Home Page</a></li> -->
+        <li class="up"><a href="http://localhost:4200/bookings/get-booking"><i class="fa fa-ticket" aria-hidden="true"></i> View Booking</a></li>
+        <li class="up"><a href="http://localhost:4200/bookings/delete-booking"><i class="fa fa-trash" aria-hidden="true"></i> Cancel Booking</a></li>
+        <li class="up"><a href="http://localhost:4200/bookings/add-booking"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Add Booking</a></li>
+        <li class="up"><a href="http://localhost:4200/passenger/add-passenger"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Add Passenger</a></li>
+        <button class="lg" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+    </ul>
+    <h2 class="payment"> Payment <i class="fa fa-cc-visa" aria-hidden="true"></i> &nbsp;<i class="fa fa-cc-mastercard" aria-hidden="true"></i></h2>
+   <div class="tf"><h3 class="totalFare">Your Total Fare is : {{TotalFare}}</h3></div> 
+    <form #Payment="ngForm" [formGroup]="paymentForm" (ngSubmit)="addPayment(Payment.value)">
+     
+        <p class="id">Your Passenger Id <input name="passengerId" [value]="PassengerId" type="Number" readonly></p>
+    <!-- <div class="error"  *ngIf="PId.errors?.['required'] && (PId.dirty || PId.touched)">Passenger ID is Required</div> -->
+    <div class="main"> 
+        <div class="register"> <p class="cd">Card Details <i class="fa fa-credit-card" aria-hidden="true"></i></p>
+        <p class="name">Card Holder Name <input ngModel required="" name="cardHolderName" formControlName="cardHolderName" type="text"></p>
+    <div class="error"  *ngIf="CHName.errors?.['required'] && (CHName.dirty || CHName.touched)">Card Holder Name is Required</div>
+    <div class="error"  *ngIf="CHName.errors?.['pattern']  && (CHName.dirty || CHName.touched)">Card Number should be valid</div>    
+        <p class="cn">Card Number<input ngModel required="" name="cardNumber" formControlName="cardNumber" type="text" min="1" max="9999999999999999">
+    <div class="error"  *ngIf="CNo.errors?.['required'] && (CNo.dirty || CNo.touched)">Card Number is Required</div>
+<div class="error"  *ngIf="CNo.errors?.['minlength'] || CNo.errors?.['maxlength'] && (CNo.dirty || CNo.touched) ">Card Number should be 16 digit Number </div>
+<div class="error"  *ngIf="CNo.errors?.['pattern']  && (CNo.dirty || CNo.touched)">Card Number should be valid</div>
+        
+            <p class="cvv">CVV<input ngModel required="" name="cvv" formControlName="cvv" type="password" min="001" max="999">
+    <div class="error"  *ngIf="CVV.errors?.['required'] && (CVV.dirty || CVV.touched)">CVV is Required</div>
+<div class="error"  *ngIf="CVV.errors?.['minlength'] || CVV.errors?.['maxlength'] && (CVV.dirty || CNo.touched) ">CVV should be 3 digit Number </div>
+<div class="error"  *ngIf="CVV.errors?.['pattern']  && (CVV.dirty || CVV.touched)">CVV sholud be valid</div>
+        
+                <label class = "d"  for="date">Expiry Date</label>
+        <input ngModel required="" name="expiry" formControlName="expiry" class="datebox" min="{{currentDate | date:'yyyy-MM-dd'}}" id="date" type="date">
+    <div class="error"  *ngIf="Expiry.errors?.['required'] && (Expiry.dirty || Expiry.touched)">Expiry Date is Required</div>
+        
+            </div></div>
+        <button class="but1" type="submit" [disabled]="paymentForm.invalid" onclick="">Make Payment</button>
+    </form>
+</header>
+</body>
+
+<!-- <body>
+    <h1 class="Heading">Railway Reservation System</h1>
+    <marquee scrollamount="15" bgcolor="Green" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Payment Page--- Enter the Card Details carefully--- Thankyou!!!</marquee>
+    <div class="abc">
+    <h2 class="payment">Payment</h2>
+    <h3 class="totalFare">Your Total Fare is : {{TotalFare}}</h3>
+    <form #Payment="ngForm" (ngSubmit)="addPayment(Payment.value)">
+        <p class="id">Your Passenger Id <input name="passengerId" [value]="PassengerId" type="Number" readonly></p>
+        <p class="name">Card Holder Name <input ngModel name="cardHolderName" type="text"></p>
+        <p class="cn">Card Number<input ngModel name="cardNumber" type="Number">
+            <p class="cvv">CVV<input ngModel name="cvv" type="Number">
+                <label class = "d"  for="date">Expiry Date</label>
+        <input ngModel name="expiry" class="datebox" min="{{currentDate | date:'yyyy-MM-dd'}}" id="date" type="date">
+        <button class="but1" type="submit" onclick="alert('Payment Successfull')">Make Payment</button>
+    </form>
+</div>
+</body> -->

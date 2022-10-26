@@ -1,0 +1,68 @@
+/* .Heading {
+    
+  text-align: center;
+  background-color: rgb(148, 148, 246);
+  color: #fdfdfd;
+  font-size: 50px;
+  color: black;
+} */
+marquee{
+  color: rgb(253, 252, 252);
+  font-size:xx-large;
+  font-weight:bolder;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: rgba(0, 8, 8, 0.318);
+}
+header{
+  /* background: url(trainBook.jpg); */
+background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0, 1, 1, 0.607)), url(userPage.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh; 
+}
+
+  /* body {
+    border: 5px solid rgb(135, 247, 255);
+  } */
+  .function{
+    margin-top: 10px;
+    text-align: center;
+    color:#ffffff;
+    font-weight: bolder;
+    font-size: 45px;
+   }
+   .btn{
+    position:absolute;
+    bottom: 20px;
+    left: 20px;
+   }
+   .but1{
+    color: #fdfdfd;
+    text-decoration: none;
+    border: 1px solid #fdfdfd;
+    background: transparent;
+    transition: 0.8s ease;
+    font-weight: bolder;
+    font-size: 25px;
+    transition: 0.8s;
+}
+.but1:hover{
+  background-color:lightblue;
+  color: black;
+  }
+  .tab, td, th
+  {
+    /* background-color: antiquewhite; */
+    font-weight: bolder;
+    align-items: center;
+    color:rgb(255, 255, 255);
+    border: 1px solid white;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 2px solid;
+    padding: 1px;
+}
+th{
+  background-color: rgba(14, 14, 0, 0.64);
+  color:rgba(255, 254, 244, 0.995);
+}

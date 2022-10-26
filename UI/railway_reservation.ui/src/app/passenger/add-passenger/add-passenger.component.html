@@ -1,0 +1,135 @@
+<body>
+    <header>
+        <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Enter the correct details--- Thankyou!!!</marquee>
+        <ul>
+            <!-- <li class="hp"><a href="http://localhost:4200/login"><i class="fa fa-home" aria-hidden="true"></i> Home Page</a></li> -->
+            <li class="up"><a href="http://localhost:4200/bookings/get-booking"><i class="fa fa-ticket" aria-hidden="true"></i> View Booking</a></li>
+            <li class="up"><a href="http://localhost:4200/bookings/delete-booking"><i class="fa fa-trash" aria-hidden="true"></i> Cancel Booking</a></li>
+            <li class="td"><a href="http://localhost:4200/bookings/add-booking"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Add Booking</a></li>
+            <button class="lg" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+    
+        </ul>
+    <form #Passenger="ngForm" [formGroup]="passengerForm" (ngSubmit)="insertPassenger(Passenger.value)">
+        <div class="main"> 
+            <div class="register"> <p class="pd">Passenger Details</p> 
+        <p class="name">Passenger Name <input ngModel required="" name="name" formControlName="name" type="text" placeholder="Enter Your Name"></p>
+    <div class="error"  *ngIf="Name.errors?.['required'] && (Name.dirty || Name.touched)">Passenger Name is Required</div>
+    
+    <p class="age">Passenger Age<input ngModel required="" name="age" formControlName="age" type="Number" min="6" max="100" placeholder=" Age"></p>
+    <div class="error"  *ngIf="Age.errors?.['required'] && (Age.dirty || Age.touched)">Passenger Age is Required</div>
+    
+    <div class="g">Passenger Gender
+    <select ngModel required="" name="gender" formControlName="gender" class="box1" >
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <div class="error"  *ngIf="Gender.errors?.['required'] && (Gender.dirty || Gender.touched)">Select One Option</div>
+    </div>
+    
+    <p class="email">Passenger Email <input ngModel required="" name="email" formControlName="email" type="text" placeholder="Enter Your E-Mail"></p>
+    <div class="error"  *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">Email ID is Required</div>
+    <div class="error"  *ngIf="Email.errors?.['email']">Enter the Valid Email ID</div>
+    
+    <div class="qt">Passenger Quota
+    <select ngModel required="" name="quota" formControlName="quota" class="box2" >
+        <option value="general">General</option>
+        <option value="ladies">Ladies</option>
+    </select>
+    <div class="error"  *ngIf="Quota.errors?.['required'] && (Quota.dirty || Quota.touched)">Select One Option</div>
+    </div>
+    
+    <p class="sr">Seat Requirement<input ngModel required="" name="requiredseats" formControlName="requiredseats" type="Number" min="1" max="6" placeholder="No."></p>
+    <div class="error"  *ngIf="ReqSeats.errors?.['required'] && (ReqSeats.dirty || ReqSeats.touched)">Number of Required Seate is mandatory field</div>
+    <div class="error"  *ngIf="ReqSeats.errors?.['max'] && (ReqSeats.dirty || ReqSeats.touched)">You can not book more than 6 tickets</div>
+    
+    <p class="bi">Your Booking Id is <input  name="booking_id" type="Number" [value]="booking_id" readonly> </p>
+    
+    <p class="ti">Your Train Number <input  name="trainId"  type="Number" [value]="TrainId" readonly></p>
+    
+    
+            <button class="but2" type="submit" [disabled]="passengerForm.invalid" onclick="">Proceed To Payment</button>
+            </div></div>
+    
+    </form>
+    </header>
+    </body>
+
+<!-- <body>
+<header>
+    <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Enter the correct details--- Thankyou!!!</marquee>
+    <ul>
+        <li class="hp"><a href="http://localhost:4200/home-page"><i class="fa fa-home" aria-hidden="true"></i> Home Page</a></li>
+        <li class="up"><a href="http://localhost:4200/user/user-page"><i class="fa fa-user" aria-hidden="true"></i> User Page</a></li>
+        <li class="td"><a href="http://localhost:4200/bookings/add-booking"><i class="fa fa-ticket" aria-hidden="true"></i> Book Ticket</a></li>
+        <button class="lg" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+
+    </ul>
+<form #Passenger="ngForm" [formGroup]="passengerForm" (ngSubmit)="insertPassenger(Passenger.value)">
+    <div class="pd">Passenger Details</div>
+    <p class="name">Passenger Name <input ngModel required="" name="name" formControlName="name" type="text"></p>
+<div class="error"  *ngIf="Name.errors?.['required'] && (Name.dirty || Name.touched)">Passenger Name is Required</div>
+
+<p class="age">Passenger Age<input ngModel required="" name="age" formControlName="age" type="Number" min="6" max="100"></p>
+<div class="error"  *ngIf="Age.errors?.['required'] && (Age.dirty || Age.touched)">Passenger Age is Required</div>
+
+<div class="g">Passenger Gender</div>
+<select ngModel required="" name="gender" formControlName="gender" class="box1" >
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+</select>
+<div class="error"  *ngIf="Gender.errors?.['required'] && (Gender.dirty || Gender.touched)">Select One Option</div>
+
+<p class="email">Passenger Email <input ngModel required="" name="email" formControlName="email" type="text"></p>
+<div class="error"  *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">Email ID is Required</div>
+<div class="error"  *ngIf="Email.errors?.['email']">Enter the Valid Email ID</div>
+
+<div class="qt">Passenger Quota</div>
+<select ngModel required="" name="quota" formControlName="quota" class="box2" >
+    <option value="general">General</option>
+    <option value="ladies">Ladies</option>
+</select>
+<div class="error"  *ngIf="Quota.errors?.['required'] && (Quota.dirty || Quota.touched)">Select One Option</div>
+
+<p class="sr">Seat Requirement<input ngModel required="" name="requiredseats" formControlName="requiredseats" type="Number" min="1" max="6"></p>
+<div class="error"  *ngIf="ReqSeats.errors?.['required'] && (ReqSeats.dirty || ReqSeats.touched)">Number of Required Seate is mandatory field</div>
+<div class="error"  *ngIf="ReqSeats.errors?.['max'] && (ReqSeats.dirty || ReqSeats.touched)">You can not book more than 6 tickets</div>
+
+<p class="bi">Your Booking Id is <input  name="booking_id" type="Number" [value]="booking_id" readonly> </p>
+
+<p class="ti">Your Train Number <input  name="trainId"  type="Number" [value]="TrainId" readonly></p>
+
+        <button class="but2" type="submit" [disabled]="passengerForm.invalid" onclick="">Proceed To Payment</button>
+
+</form>
+</header>
+</body> -->
+
+<!-- <body>
+    <h1 class="Heading">Railway Reservation System</h1>
+    <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Enter the correct details--- Thankyou!!!</marquee>
+    <div class="abc">
+<h2 class="pd">Passenger Details</h2>
+<form #Passenger="ngForm" (ngSubmit)="insertPassenger(Passenger.value)">
+<p class="name">Passenger Name <input ngModel required="" name="name" type="text"></p>
+<p class="age">Passenger Age<input ngModel required="" name="age" type="Number" min="6" max="100"></p>
+<div class="g">Passenger Gender</div>
+<select ngModel required="" name="gender" class="box1" >
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+</select>
+<p class="email">Passenger Email <input ngModel required="" name="email" type="text"></p>
+<div class="qt">Passenger Quota</div>
+<select ngModel required="" name="quota" class="box2" >
+    <option value="general">General</option>
+    <option value="ladies">Ladies</option>
+</select>
+<p class="sr">Seat Requirement<input ngModel required="" name="requiredseats" type="Number" min="1" max="6"></p>
+<p class="bi">Your Booking Id is <input  name="booking_id" type="Number" [value]="booking_id" readonly> </p>
+<p class="ti">Your Train Number <input  name="TrainId" type="Number" [value]="TrainId" readonly></p>
+<a href="http://localhost:4200/bookings/add-booking">
+<button class="but1" type="button" onclick="">Back</button>
+</a>
+<button class="but2" type="submit" [disabled]="Passenger.invalid" onclick="">Proceed To Payment</button>
+</form>
+</div>
+</body> -->

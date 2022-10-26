@@ -1,0 +1,91 @@
+<html>
+<body>
+  <header>
+  <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >Online Railway Reservation System---  Hello Admin---  Update the Train Details---  Thankyou!!!</marquee>
+  <ul>
+    <li class="hp"><a href="http://localhost:4200/login"><i class="fa fa-home" aria-hidden="true"></i> Home Page</a></li>
+    <button class="td" data-bs-toggle="modal" data-bs-target="#myModal" onclick=""><i class="fa fa-train" aria-hidden="true"></i> Train Details</button>
+    <div class="modal" id="myModal">
+      <div class="popup">
+      <div class="modal-dialog">
+        
+     
+          <h3 class="function">Trains Details</h3>
+
+          
+      <table class="tab" width="100%" >
+  
+          <tr >
+             <th>Train ID</th>
+             <th>Train Number</th>
+             <th>Train Name</th>
+             <th>Source</th>
+             <th>Destination</th>
+             <th>Train Fare</th>
+             <th>Train Time</th>
+             <th>Available seats for general </th>
+             <th>Available seats for ladies </th>
+                        
+          </tr>
+  
+          <tr  *ngFor="let t of TrainList;let i=index">
+              <td>{{ t.TrainId}}</td>
+              <td>{{ t.TrainNo }}</td>
+              <td>{{ t.TrainName }}</td>
+              <td>{{ t.Train_Source }}</td>
+              <td>{{ t.Train_Destination }}</td>
+              <td>{{ t.TrainFare }}</td>
+              <td>{{ t.TrainTime }}</td>
+              <td>{{ t.Avl_Seats_General }}</td>
+              <td>{{ t.Avl_Seats_Ladies }}</td>    
+          </tr>
+      </table>
+      
+  </div>
+</div> 
+<!-- </a> -->
+</div>
+    <button class="lg" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+
+  </ul>
+    <h2 class="mt">Manage Train</h2> 
+    <form [formGroup]="manageForm" #train="ngForm" (ngSubmit)="manageTrain(train.value)">
+    <p class="id">Enter Train Id <input ngModel name="id" formControlName="id" class="box1" type="Number" min="1" max="9999"></p>
+    <div class="error"  *ngIf="Id.errors?.['required'] && (Id.dirty || Id.touched)">Train ID is Required</div>
+    
+    <label class = "d" for="date">Update Date</label>
+    <input ngModel name="datetime" class="datebox" min="{{currentDate | date:'yyyy-MM-dd'}}" id="date" formControlName="datetime" type="date">
+    <div class="error"  *ngIf="Date.errors?.['required'] && (Date.dirty || Date.touched)">Date is Required</div>
+   
+    <p  class="uf">Update Fare<input ngModel name="fare" class="box2" type="Number" formControlName="fare" min="001" max="99999"></p>
+    <div class="error"  *ngIf="Fare.errors?.['required'] && (Fare.dirty || Fare.touched)">Fare is Required</div>
+    <button class="but2" type="submit"[disabled]="manageForm.invalid" onclick= "window.location.reload()">Proceed</button>
+   <!-- <script>
+        function myFunction() {
+          alert("Train Updated Successfully!!");
+        }
+        </script> --> 
+    </form>
+</header>
+</body>
+</html>
+
+<!-- <html>
+<body>
+  <h1 class="Heading">Railway Reservation System</h1>
+  <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >Online Railway Reservation System---  Hello Admin---  Update the Train Details---  Thankyou!!!</marquee>
+  <div class="abc">
+    <h2 class="mt">Manage Train</h2> 
+    <form #train="ngForm" (ngSubmit)="manageTrain(train.value)">
+    <p class="id">Enter Train Id <input ngModel name="id" class="box1" type="Number" min="1" max="9999"></p>
+    <label class = "d" for="date">Update Date</label>
+    <input ngModel name="datetime" class="datebox" min="{{currentDate | date:'yyyy-MM-dd'}}" id="date" type="date">
+    <p  class="uf">Update Fare<input ngModel name="fare" class="box2" type="Number" min="001" max="99999"></p>
+    <a href="http://localhost:4200/home-page">
+    <button class="but1" type="button" onclick="">Back</button>
+  </a>
+    <button class="but2" type="submit" onclick= "alert('Updated Successfully')">Proceed</button>
+    </form>
+  </div>
+</body>
+</html> -->

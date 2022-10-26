@@ -1,0 +1,110 @@
+.main{
+  margin-top: 5%;
+  margin-left: 38%;
+  margin-bottom: 50px;
+}
+.register{
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.558);
+  width: 40%;
+  border-radius: 20px;
+  border:3px solid rgba(0, 81, 255, 0.591);
+  box-shadow: 4px 1px 10px rgba(4, 255, 201, 0.444);
+}
+ul button{
+  margin-left: 710px;
+  text-decoration: none;
+  color: #fdfdfd;
+  padding: 5px 20px;
+  transition: 0.8s ease;
+  border: 1px solid #fdfdfd;
+  background: transparent;
+}
+ul button:hover{
+  background-color: rgb(220, 250, 215);
+color: black;
+}
+ul{
+  margin-top: 0px;
+  float: left;
+  list-style-type:none;
+  font-size: 20px;
+  /* font-weight: bold; */
+}
+ul li{
+  display: inline-block;
+}
+ul li a{
+  text-decoration: none;
+  color: #fdfdfd;
+  padding: 8px 20px;
+  transition: 0.8s ease;
+  border: 1px solid #fdfdfd;
+}
+ul li a:hover{
+background-color: rgb(220, 250, 215);
+color: black;
+}
+.error{
+  color: red;
+}
+marquee{
+  font-size:x-large;
+  font-weight:bolder;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: rgb(220, 221, 221);
+}
+header{
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(trainBook.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 110vh; 
+}  
+.error{
+  /* margin-left: 700px; */
+  color: red;
+}
+.mb{
+  margin-top: 20px;
+  font-weight: bolder;
+  font-size: 35px;
+   text-align: center ;
+   color:rgb(255, 247, 247);
+
+}
+.id{
+  margin-top: 20px;
+  font-weight: bolder;
+  font-size: large;
+    text-align: center ;
+    color:rgb(255, 255, 255);
+  }
+  .but1{
+    border-radius: 25%;
+margin-top: 29px;
+    font-size: 20px;
+    background-color:lightblue;
+    /* margin-top: 50px; */
+}
+.tab{
+    text-align:center;
+    color:rgb(255, 255, 255);
+    padding-bottom:50px;
+  }
+  .tab,td,th
+  {
+    width: 50%;
+    font-weight: bold;
+    align-items: center;
+    color:rgb(255, 255, 255);
+    border: 1px solid white;
+    text-align: 50%;
+    margin-left: 25%;
+    margin-top: 40px;
+    border: 2px solid;
+  }
+th{
+  background:transparent;
+  color:rgb(255, 255, 255);
+}

@@ -1,0 +1,39 @@
+ <body>
+    <header>
+<marquee scrollamount="15" style="border:#52ab98 3px SOLID" >Online Railway Reservation---  This page gives you the infomation about trains, So that you can easily get the train name, their fare, number of available seats ............Thankyou!! HAPPY JOURNEY</marquee>
+
+    <h3 class="function">Trains Details</h3>
+    <table class="tab" width="100%" >
+    
+        <tr >
+           <th>Train ID</th>
+           <th>Train Number</th>
+           <th>Train Name</th>
+           <th>Source</th>
+           <th>Destination</th>
+           <th>Train Fare</th>
+           <th>Train Time</th>
+           <th>Available seats for general </th>
+           <th>Available seats for ladies </th>
+                      
+        </tr>
+
+        <tr  *ngFor="let t of TrainList;let i=index">
+            <td>{{t.TrainId}}</td>
+            <td>{{ t.TrainNo }}</td>
+            <td>{{ t.TrainName }}</td>
+            <td>{{ t.Train_Source }}</td>
+            <td>{{ t.Train_Destination }}</td>
+            <td>{{ t.TrainFare }}</td>
+            <td>{{ t.TrainTime }}</td>
+            <td>{{ t.Avl_Seats_General }}</td>
+            <td>{{ t.Avl_Seats_Ladies }}</td>    
+        </tr>
+    </table>
+    <div class="btn">
+        <a href="http://localhost:4200/login">
+        <button class="but1" type="button" onclick=""><i class="fa fa-home" aria-hidden="true"></i>  Go to Home Page</button>
+        </a>   
+    </div>
+</header>
+</body>  

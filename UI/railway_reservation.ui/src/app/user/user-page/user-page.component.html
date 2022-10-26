@@ -1,0 +1,64 @@
+<body>
+    <header>
+        <marquee scrollamount="15" style="border:#52ab98 3px SOLID">---Online Railway Reservation System--- Welcome
+            User--- Here you can Book, View & Cancel your Ticket--- Thankyou!!!</marquee>
+        <div class="menu">
+            <ul>
+                <li class="hp"><a href="http://localhost:4200/login"><i class="fa fa-home" aria-hidden="true"></i> Home Page</a></li>
+                <!-- <li class="td"><a href="http://localhost:4200/train-details">Train Details</a></li> -->
+                <button class="td" data-bs-toggle="modal" data-bs-target="#myModal" (click)="trainDetails()"><i class="fa fa-train" aria-hidden="true"></i> Train Details</button>
+                <div class="modal" id="myModal">
+                    <div class="popup">
+                    <div class="modal-dialog">
+                      
+                   
+                        <h3 class="function">Trains Details</h3>
+            
+                        
+                    <table class="tab" width="100%" >
+                
+                        <tr >
+                           <th>Train ID</th>
+                           <th>Train Number</th>
+                           <th>Train Name</th>
+                           <th>Source</th>
+                           <th>Destination</th>
+                           <th>Train Fare</th>
+                           <th>Train Time</th>
+                           <th>Available seats for general </th>
+                           <th>Available seats for ladies </th>
+                                      
+                        </tr>
+                
+                        <tr  *ngFor="let t of TrainList;let i=index">
+                            <td>{{ i+1 }}</td>
+                            <td>{{ t.TrainNo }}</td>
+                            <td>{{ t.TrainName }}</td>
+                            <td>{{ t.Train_Source }}</td>
+                            <td>{{ t.Train_Destination }}</td>
+                            <td>{{ t.TrainFare }}</td>
+                            <td>{{ t.TrainTime }}</td>
+                            <td>{{ t.Avl_Seats_General }}</td>
+                            <td>{{ t.Avl_Seats_Ladies }}</td>    
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div> 
+            <!-- </a> -->
+  </div>
+                <button class="lg" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+            </ul>
+        </div>
+        <h2 class="up">User Page</h2>
+        <a href="http://localhost:4200/bookings/add-booking">
+            <p><button class="but1" type="button" onclick="">Book Ticket</button></p>
+        </a>
+        <a href="http://localhost:4200/bookings/get-booking">
+            <p><button class="but2" type="button" onclick="">My Booking</button></p>
+        </a>
+        <a href="http://localhost:4200/bookings/delete-booking">
+            <p><button class="but3" type="button" onclick="">Cancel Booking</button></p>
+        </a>
+    </header>
+</body>

@@ -1,0 +1,90 @@
+<html>
+<body>
+    <header>
+        <marquee scrollamount="15" style="border:#52ab98 3px SOLID">---Online Railway Reservation System--- Hello
+            User---
+            Please enter your PNR to View the details--- Thankyou!!!</marquee>
+        <ul>
+            <!-- <li class="hp"><a href="http://localhost:4200/login"><i class="fa fa-home" aria-hidden="true"></i> Home Page</a></li> -->
+            <li class="up"><a href="http://localhost:4200/bookings/delete-booking"><i class="fa fa-trash" aria-hidden="true"></i> Cancel Booking</a></li>
+            <li class="up"><a href="http://localhost:4200/bookings/add-booking"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Add Booking</a></li>
+            <button class="lg" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+        </ul>
+        <form #getBooking="ngForm" [formGroup]="getForm" (ngSubmit)="getTicket(getBooking.value)">
+            <div class="main">
+                <div class="register"><p class="mb"> My Booking</p>
+            <p class="id">Enter your PNR <input required="" ngModel name="id" formControlName="id" type="Number" min="1"
+                    max="1000"></p>
+            <div class="error" *ngIf="Id.errors?.['required'] && (Id.dirty || Id.touched)">PNR is Required</div>
+            <p><button class="but1" type="submit" [disabled]="getBooking.invalid" onclick="">Submit</button></p>
+                </div></div>
+                <!-- <div id="ticket" #ticket> -->
+            <table class="tab" *ngIf="bookingDetailsAvailable" width="100%">
+                <tr *ngIf="bookingDetailsAvailable">
+                    <th>Train ID</th>
+                    <td>{{bookingDetails.TrainId}}</td>
+                </tr>
+                <tr *ngIf="bookingDetailsAvailable">
+                    <th>Name</th>
+                    <td>{{bookingDetails.PassengerName}}</td>
+                </tr>
+                <tr *ngIf="bookingDetailsAvailable">
+                    <th>Age</th>
+                    <td>{{bookingDetails.PassengerAge}}</td>
+                </tr>
+                <tr *ngIf="bookingDetailsAvailable">
+                    <th>Gender</th>
+                    <td>{{bookingDetails.PassengerGender}}</td>
+                </tr>
+                <tr *ngIf="bookingDetailsAvailable">
+                    <th>Booked Seats</th>
+                    <td>{{bookingDetails.RequiredSeats}}</td>
+                </tr>
+                <tr *ngIf="bookingDetailsAvailable">
+                    <th>Total Fares</th>
+                    <td>{{bookingDetails.TotalFare}}</td>
+                </tr>
+            </table>
+        </form>
+        
+    </header>
+</body>
+</html>
+
+<!-- <body>
+<h1 class="Heading">Railway Reservation System</h1>
+<marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Hello User--- Please enter your PNR to View the details--- Thankyou!!!</marquee>
+<div class="abc">
+<h2 class="mb">My Booking</h2> 
+<form #getBooking="ngForm" (ngSubmit)="getTicket(getBooking.value)">
+<p class="id">Enter your PNR <input required="" ngModel name="id" type="Number" min="1" max="1000"></p>
+<p><button class="but1" type="submit" [disabled]="getBooking.invalid" onclick="">Submit</button></p>
+<div class="btn">
+<a href="http://localhost:4200/user/user-page">
+<button class="but2" type="button" onclick="">Back</button>
+</a>
+</div>
+</form>
+    <div class="function" *ngIf="bookingDetailsAvailable">
+        <div> 
+            Your TrainId is :- {{bookingDetails.TrainId}}
+        </div>
+        <div> 
+             Name :- {{bookingDetails.PassengerName}}
+        </div>
+        <div> 
+             Age  :- {{bookingDetails.PassengerAge}}
+        </div>
+        <div> 
+             Gender  :- {{bookingDetails.PassengerGender}}
+        </div>
+        <div> 
+            Your Required Seats are :- {{bookingDetails.RequiredSeats}}
+        </div>
+        <div> 
+            Your Total Fare is :- {{bookingDetails.TotalFare}}
+        </div>
+
+    </div>
+</div>
+</body> -->

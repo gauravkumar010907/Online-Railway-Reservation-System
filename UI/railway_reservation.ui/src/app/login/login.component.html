@@ -1,0 +1,73 @@
+<body>
+    <header>
+        <marquee scrollamount="15" style="border:#52ab98">Pakistan Online Railway Reservation System--- Hello User--- Enter the Correct credentials to
+            login successfully--- Thankyou!!!</marquee>
+        <!-- <form [formGroup]="loginForm" #homelogin="ngForm" (ngSubmit)="login(homelogin.value)"> -->
+            <form [formGroup]="loginForm" #homelogin="ngForm" (ngSubmit)="login()">
+
+
+
+            <div class="main">
+                <div class="register"><p class="login"> Login</p>
+                    <!-- <p class="id"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Login Id<input ngModel name="loginId" formControlName="loginId" type="text"> -->
+                        <p class="id"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Login Id<input [(ngModel)]="loginId" formControlName="loginId" type="text" placeholder="Enter Login ID">
+
+                    </p>
+                    <div class="error" *ngIf="Id.errors?.['required'] && (Id.dirty || Id.touched)"> Login id is
+                        required
+                    </div>
+
+                    <p class="pwd"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Password<input [(ngModel)]="password" formControlName="password"
+                            type="password" placeholder="Enter Password"></p>
+                    <div class="error" *ngIf="Pwd.errors?.['required'] && (Pwd.dirty || Pwd.touched)">Password is
+                        required</div>
+                    <div class="error"
+                        *ngIf="Pwd.errors?.['minlength'] || Pwd.errors?.['maxlength'] && (Pwd.dirty || Pwd.touched)">
+                        Password
+                        sholud be minimun 6 characters</div>
+                    <div class="q">
+                        <p class="as">Login As:</p>
+                        <select [(ngModel)]="designation" formControlName="designation">
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                        </select>
+                        <div class="error" *ngIf="las.errors?.['required'] && (las.dirty || las.touched)"> Role is
+                            required
+                        </div>
+                    </div>
+                    <button class="but1" type="submit" [disabled]="loginForm.invalid" onclick=""><i class="fa fa-sign-in" aria-hidden="true"></i> Login
+                    </button>
+                </div>
+            </div>
+        </form>
+        <a href="http://localhost:4200/user/add-user">
+            <button class="but2" type="button" onclick=""><i class="fa fa-user-plus" aria-hidden="true"></i> User
+                Registration</button>
+        </a>
+
+        <a href="http://localhost:4200/train-details">
+            <button class="but3" type="button" onclick=""><i class="fa fa-train" aria-hidden="true"></i> Train
+                Details</button>
+        </a>
+    </header>
+</body>
+
+<!-- <body>
+    <h1 class="Heading">Railway Reservation System</h1>
+    <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Hello User--- Enter the Source, destination and Date--- Thankyou!!!</marquee>
+    <div class="abc">
+<h2 class="login">User Login</h2>
+<form  [formGroup]="loginForm"  #userlogin="ngForm" (ngSubmit)="login(userlogin.value)">
+<p class="id">User Login Id<input ngModel name="userLoginId" formControlName="userLoginId" type="text"></p>
+    <div class="error"  *ngIf="Id.errors?.['required'] && (Id.dirty || Id.touched)">User Login id is required</div>
+    <select ngModel name="loginAs" formControlName="loginAs">
+        <option value="admin">Admin</option>
+        <option value="user">User Login</option>
+    </select>
+<p class="pwd">Enter Password<input ngModel name="Password" formControlName="Password" type="password"></p>
+<div class="error"  *ngIf="Pwd.errors?.['required'] && (Pwd.dirty || Pwd.touched)">Password is required</div>
+<div class="error"  *ngIf="Pwd.errors?.['minlength'] || Pwd.errors?.['maxlength'] && (Pwd.dirty || Pwd.touched)">Password sholud be minimun 6 characters</div>
+<button class="but1" type="submit" onclick=""> Login </button>
+</form>
+</div>
+</body> -->

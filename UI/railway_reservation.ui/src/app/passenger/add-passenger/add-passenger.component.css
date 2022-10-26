@@ -1,0 +1,225 @@
+.main{
+    margin-top: 4%;
+    width: 1000px;
+    margin-left: 29%;
+    margin-bottom: 50px;
+  }
+  .register{
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    width: 45%;
+    border-radius: 20px;
+    border:3px solid rgba(255, 255, 255, 0.591);
+    box-shadow: 4px 1px 15px rgba(14, 48, 238, 0.444);
+  }
+ul button{
+    margin-left: 530px;
+    text-decoration: none;
+    color: #fdfdfd;
+    padding: 8px 20px;
+    transition: 0.8s ease;
+    border: 1px solid #fdfdfd;
+    background: transparent;
+}
+ul button:hover{
+    background-color: rgb(220, 250, 215);
+color: black;
+}
+.error{
+    color:red;
+  }
+
+  ul{
+    font-size: 20px;
+    margin-top: 0px;
+    float: left;
+    list-style-type:none;
+   
+}
+ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: #fdfdfd;
+    padding: 10px 20px;
+    transition: 0.8s ease;
+    border: 1px solid #fdfdfd;
+}
+ul li a:hover{
+background-color: rgb(220, 250, 215);
+color: black;
+}
+  marquee{
+    font-size:x-large;
+    color: rgb(255, 255, 255);
+    font-weight:bolder;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgba(67, 67, 127, 0.373);
+  }
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0, 0, 0, 0.5)), url(trainBook.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 140vh; 
+    width: 230vh;
+} 
+.pd{
+    /* margin-top: 30px; */
+    text-align: center;
+    color: wheat;
+    
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.name{
+    color: rgb(255, 255, 255);
+}
+.age{
+    margin-right :100px;
+    color: rgb(255, 255, 255);
+}
+.g{
+    margin-right :118px;
+    color: rgb(255, 255, 255);
+}
+.box1{
+    display: inline;
+    
+}
+.email{
+    margin-left: 10px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+}
+.qt{
+    margin-right :104px;
+    color: rgb(255, 255, 255);
+}
+
+.sr{
+    margin-right: 128px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+}
+.bi{
+    margin-left: 2px;;
+    color: rgb(255, 255, 255);
+}
+.ti{
+    margin-left: 0px;
+    color: rgb(255, 255, 255);
+}
+
+.but2{
+    border-radius: 45%;
+   margin-top: 15px;
+    font-weight: bolder;
+    color: rgb(0,10,5);
+}
+
+/* ul button{
+    margin-left: 700px;
+    text-decoration: none;
+    color: #fdfdfd;
+    padding: 5px 20px;
+    transition: 0.8s ease;
+    border: 1px solid #fdfdfd;
+    background: transparent;
+}
+ul button:hover{
+    background-color: rgb(220, 250, 215);
+color: black;
+}
+.error{
+    margin-left: 600px;
+    color:red;
+  }
+
+  ul{
+    margin-top: 0px;
+    float: left;
+    list-style-type:none;
+}
+ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: #fdfdfd;
+    padding: 8px 20px;
+    transition: 0.8s ease;
+    border: 1px solid #fdfdfd;
+}
+ul li a:hover{
+background-color: rgb(220, 250, 215);
+color: black;
+}
+  marquee{
+    font-size:x-large;
+    color: aliceblue;
+    font-weight:bolder;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(67, 67, 127);
+  }
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(trainBook.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 110vh; 
+} 
+.pd{
+    margin-top: 70px;
+    text-align: center;
+    color: wheat;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.name{
+    margin-left: 500px;
+    color: rgb(255, 255, 255);
+}
+.age{
+    margin-left: 500px;
+    color: rgb(255, 255, 255);
+}
+.g{
+    margin-left: 500px;
+    color: rgb(255, 255, 255);
+}
+.box1{
+    display: inline;
+    margin: 10px 200px 5px 550px;
+}
+.email{
+    margin-left: 500px;
+    color: rgb(255, 255, 255);
+}
+.qt{
+    margin-left: 500px;
+    color: rgb(255, 255, 255);
+}
+.box2{
+    margin: 10px 200px 10px 550px;
+}
+.sr{
+    margin-left: 500px;
+    color: rgb(255, 255, 255);
+}
+.bi{
+    margin-left: 500px;
+    color: rgb(255, 255, 255);
+}
+.ti{
+    margin-left: 500px;
+    color: rgb(255, 255, 255);
+}
+
+.but2{
+    border-radius: 45%;
+   margin-left: 50%;
+   margin-top: 15px;
+    font-weight: bolder;
+    color: rgb(0, 10, 5);
+    
+} */

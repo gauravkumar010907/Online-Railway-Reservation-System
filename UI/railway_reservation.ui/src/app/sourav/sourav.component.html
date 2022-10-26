@@ -1,0 +1,12 @@
+<body>
+    <h1 class="Heading">Railway Reservation System</h1>
+    <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Hello User--- Enter the Source, destination and Date--- Thankyou!!!</marquee>
+    <div class="abc">
+<h2 class="login"> Login</h2>
+<form #userlogin="ngForm" (ngSubmit)="login(userlogin.value)">
+<p class="id"> Login Id<input ngModel name="loginId" type="text"></p>
+<p class="pwd">Enter Password<input ngModel name="password" type="password"></p>
+<button class="but1" type="submit" onclick=""> Login </button>
+</form>
+</div>
+</body>

@@ -1,0 +1,39 @@
+<body>
+    <header>
+    <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Hello User--- Please enter your PNR to Cancel the ticket--- Thankyou!!!</marquee>
+    <ul>
+        <!-- <li class="hp"><a href="http://localhost:4200/login"><i class="fa fa-home" aria-hidden="true"></i> Home Page</a></li> -->
+        <li class="up"><a href="http://localhost:4200/bookings/get-booking"><i class="fa fa-ticket" aria-hidden="true"></i> View Booking</a></li>
+        <li class="up"><a href="http://localhost:4200/bookings/add-booking"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Add Booking</a></li>
+        <button class="lg" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+
+    </ul>
+    <form #deleteBooking="ngForm" [formGroup]="deleteForm" (ngSubmit)="removeBooking(deleteBooking.value)">
+        <div class="main">
+            <div class="register"><p class="cb"> Cancel Booking</p>
+        <p class="id">Enter your PNR <input ngModel required="" name="id" formControlName="id"  type="Number" min="1" max="1000"></p>
+    <div class="error"  *ngIf="Id.errors?.['required'] && (Id.dirty || Id.touched)">PNR is Required</div>
+        
+        
+        <p><button class="but1" type="submit" [disabled]="deleteBooking.invalid" onclick="alert('Cancelled Successfully')">Cancel Ticket</button></p>
+            </div></div>  
+    </form>
+</header>
+</body>
+
+<!-- <body>
+    <h1 class="Heading">Railway Reservation System</h1>
+    <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Hello User--- Please enter your PNR to Cancel the ticket--- Thankyou!!!</marquee>
+    <div class="abc">
+    <h2 class="cb">Cancel Booking</h2> 
+    <form #deleteBooking="ngForm" (ngSubmit)="removeBooking(deleteBooking.value)">
+        <p class="id">Enter your PNR <input ngModel required="" name="id" type="Number" min="1" max="1000"></p>
+        <p><button class="but1" type="submit" [disabled]="deleteBooking.invalid" onclick="alert('Updated Successfully')">Cancel Ticket</button></p>
+       <div class="btn">
+        <a href="http://localhost:4200/user/user-page">
+        <p><button class="but2" type="button" onclick="">Back</button></p>
+        </a>   
+    </div>  
+    </form>
+</div>
+</body> -->

@@ -1,0 +1,91 @@
+<body>
+    <header>
+        <marquee scrollamount="15" style="border:#52ab98 3px SOLID">---Online Railway Reservation--- Register Yourself
+            as a User....Thankyou!!</marquee>
+        <h3 class="function"></h3>
+        <form #User="ngForm" [formGroup]="registerForm" (ngSubmit)="insertUser(User.value)">
+            <div class="main"> 
+                <div class="register"> <p class="function">User Registration</p> 
+                    <p class="loginid"><b>User Login ID : </b><input ngModel name="userloginId"
+                            formControlName="userloginId" type="text"></p>
+                    <div class="error" *ngIf="Id.errors?.['required'] && (Id.dirty || Id.touched)">Set your Login ID
+                    </div>
+
+                    <p class="name"><b>User Name: </b><input ngModel required="" name="username"
+                            formControlName="username" type="text"></p>
+                    <div class="error" *ngIf="Name.errors?.['required'] && (Name.dirty || Name.touched)"> User Name is
+                        required</div>
+                    <div class="error" *ngIf="Name.errors?.['minlength'] && (Name.dirty || Name.touched)"> User Name
+                        should
+                        be more than 2 characters</div>
+
+
+                    <p class="pd"><b>Password : </b><input ngModel required="" name="password"
+                            formControlName="password" type="password"></p>
+                    <div class="error" *ngIf="Pwd.errors?.['required'] && (Pwd.dirty || Pwd.touched)">Password is
+                        required
+                    </div>
+                    <div class="error"
+                        *ngIf="Pwd.errors?.['minlength'] || Pwd.errors?.['maxlength'] && (Pwd.dirty || Pwd.touched)">
+                        Password sholud be valid</div>
+
+
+                    <p class="phno"><b>Contact Number: </b><input ngModel required="" name="contactNo"
+                            formControlName="contactNo" type="text" minlength="10" maxlength="10"></p>
+                    <div class="error" *ngIf="Phno.errors?.['required'] && (Phno.dirty || Phno.touched)">Contact number
+                        is
+                        required</div>
+                    <div class="error"
+                        *ngIf="Phno.errors?.['minlength'] || Phno.errors?.['maxlength'] && (Phno.dirty || Phno.touched)">
+                        Contact Number sholud be valid</div>
+
+
+                    <p class="email"><b>Email ID : </b><input ngModel required="" name="email" formControlName="email"
+                            type="text"></p>
+                    <div class="error" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">Email ID is
+                        required</div>
+                    <div class="error" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">Enter the Valid
+                        Email ID</div>
+
+
+                    <p class="add"><b>Address: </b><input ngModel required="" name="address" formControlName="address"
+                            type="text"></p>
+                    <div class="error" *ngIf="Address.errors?.['required'] && (Address.dirty || Address.touched)">
+                        Address is
+                        required</div>
+                    </div>
+                </div>
+
+
+                    <a href="http://localhost:4200/login">
+                        <button class="but1" type="button" onclick=""><i class="fa fa-home" aria-hidden="true"></i> Go
+                            to
+                            Home Page</button>
+                    </a>
+                    <button class="but2" type="submit" [disabled]="registerForm.invalid" onclick=""><i
+                            class="fa fa-plus" aria-hidden="true"></i> Register</button>
+                
+        </form>
+    </header>
+</body>
+
+
+<!-- <body>
+    <h1 class="Heading">Railway Reservation System</h1>
+    <marquee scrollamount="15" style="border:#52ab98 3px SOLID">---Online Railway Reservation--- Registrer Yourself as a User....Thankyou!!</marquee>
+   <div class="abc">
+    <h3 class="function">User Registration</h3>
+    <form #User="ngForm" (ngSubmit)="insertUser(User.value)">    
+    <p class="loginid"><b>User Login ID : </b><input ngModel name="userloginId" type="text">
+    <p class="name"><b>User Name: </b><input ngModel required="" name="username" type="text"></p>
+    <p class="pd"><b>Password : </b><input ngModel required="" name="password" type="text"></p>
+    <p class="phno"><b>Contact Number: </b><input ngModel required="" name="contactNo" type="text" minlength="10" maxlength="10"></p>
+    <p class="email"><b>Email ID : </b><input ngModel required="" name="email" type="text"></p>
+    <p class="add"><b>Address: </b><input ngModel required="" name="address" type="text"></p>
+<a href="http://localhost:4200/home-page">
+<button class="but1" type="button" onclick="">Back</button>
+</a>
+<button class="but2" type="submit" [disabled]="User.invalid" onclick="">Register</button>
+</form>
+</div>
+</body> -->

@@ -1,0 +1,92 @@
+<body>
+    <header>
+    <!-- <h1 class="Heading">Railway Reservation System</h1> -->
+    <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Hello User--- Enter the Source, destination and Date--- Thankyou!!!</marquee>
+                        <ul>
+                            <!-- <li class="hp"><a href="http://localhost:4200/login"><i class="fa fa-home" aria-hidden="true"></i> Home Page</a></li> -->
+                            <li class="up"><a href="http://localhost:4200/bookings/get-booking"><i class="fa fa-ticket" aria-hidden="true"></i> View Booking</a></li>
+                            <li class="up"><a href="http://localhost:4200/bookings/delete-booking"><i class="fa fa-trash" aria-hidden="true"></i> Cancel Booking</a></li>
+                            <button class="td" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa fa-train" aria-hidden="true"></i>  Train Details</button>
+                            <div class="modal" id="myModal">
+                                <div class="popup">
+                                <div class="modal-dialog">
+                                  
+                               
+                                    <h3 class="function">Trains Details</h3>
+                        
+                                    
+                                <table class="tab" width="100%" >
+                            
+                                    <tr >
+                                       <th>Train ID</th>
+                                       <th>Train Number</th>
+                                       <th>Train Name</th>
+                                       <th>Source</th>
+                                       <th>Destination</th>
+                                       <th>Train Fare</th>
+                                       <th>Train Time</th>
+                                       <th>Available seats for general </th>
+                                       <th>Available seats for ladies </th>
+                                                  
+                                    </tr>
+                            
+                                    <tr  *ngFor="let t of TrainList;let i=index">
+                                        <td>{{ t.TrainId}}</td>
+                                        <td>{{ t.TrainNo }}</td>
+                                        <td>{{ t.TrainName }}</td>
+                                        <td>{{ t.Train_Source }}</td>
+                                        <td>{{ t.Train_Destination }}</td>
+                                        <td>{{ t.TrainFare }}</td>
+                                        <td>{{ t.TrainTime }}</td>
+                                        <td>{{ t.Avl_Seats_General }}</td>
+                                        <td>{{ t.Avl_Seats_Ladies }}</td>    
+                                    </tr>
+                                </table>
+                                
+                            </div>
+                        </div> 
+                        <!-- </a> -->
+              </div>
+                            <button class="lg" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+                        </ul>
+<form #booking="ngForm" [formGroup]="bookingForm" (ngSubmit)="bookTicket(booking.value)">
+    <div class="main">
+        <div class="register">
+            <p class="book">Book Ticket</p>
+    <label class = "d" for="date">Date</label>
+   <div> <input ngModel  name="date" class="datebox" formControlName="date" min="{{currentDate | date:'yyyy-MM-dd'}}" id="date" type="date"> </div>
+    <div class="error"  *ngIf="Date.errors?.['required'] && (Date.dirty || Date.touched)">Date is Required</div>
+   
+    <div class="source">Booking Source</div>
+    <textarea ngModel  name="source" formControlName="source"  class="box1" id="1" placeholder="Enter Your Source"></textarea>
+    <div class="error"  *ngIf="Source.errors?.['required'] && (Source.dirty || Source.touched)">Source is Required</div>
+    
+    <div class="destination">Booking Destination</div>
+   <div> <textarea ngModel  name="destination" formControlName="destination" class="box2" id="2" placeholder="Enter Your Destination"></textarea></div>
+    <div class="error"  *ngIf=" Destination.errors?.['required'] && (Destination.dirty || Destination.touched)">Destination is Required</div>
+    <button class="but2" type="submit" [disabled]="bookingForm.invalid" onclick="">Submit</button>
+        </div></div>
+</form>
+<!-- <button class="logout" (click)="logout()">Logout</button>  -->
+</header>
+</body>
+
+<!-- <body>
+    <h1 class="Heading">Railway Reservation System</h1>
+    <marquee scrollamount="15" style="border:#52ab98 3px SOLID" >---Online Railway Reservation System--- Hello User--- Enter the Source, destination and Date--- Thankyou!!!</marquee>
+    <div class="abc">
+    <h2 class="book"> Book Ticket</h2> 
+<form #booking="ngForm" (ngSubmit)="bookTicket(booking.value)">
+    <label class = "d" for="date">Date</label>
+    <input ngModel required="" name="date" class="datebox" min="{{currentDate | date:'yyyy-MM-dd'}}" id="date" type="date"> 
+    <div class="source">Booking Source</div>
+    <textarea ngModel required="" name="source" class="box1" id="1"></textarea>
+    <div class="destination">Booking Destination</div>
+    <textarea ngModel required="" name="destination" class="box2" id="2"></textarea>
+    <a href="http://localhost:4200/user/user-page">
+    <button class="but1" type="button" onclick="">Back</button>
+    </a>
+    <button class="but2" type="submit" [disabled]="booking.invalid" onclick="">Submit</button>
+</form>
+</div>
+</body> -->
